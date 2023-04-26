@@ -4,7 +4,7 @@ mysql:
   db: gvb_db
   user: root
   password: dhxdl666
-#  config: ""
+  config: ""
   log_level: dev
 logger:
   level: info
@@ -15,4 +15,4 @@ logger:
 system:
   host: 0.0.0.0
   port: 8080
-  env: dev
+  env: release
