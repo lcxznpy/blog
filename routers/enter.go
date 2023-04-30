@@ -5,10 +5,16 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+type RouterGroup struct {
+	*gin.RouterGroup
+}
+
 // 路由分层分组
 func InitRouter() *gin.Engine {
 	gin.SetMode(global.Config.System.Env)
 	r := gin.Default()
-	SettingsRouter(r) //系统配置api
+	apiGroup := r.Group("api")
+	routerGroupApp := RouterGroup{apiGroup}
+	routerGroupApp.SettingsRouter() //系统配置api
 	return r
 }
