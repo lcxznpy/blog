@@ -5,3 +5,5 @@ type QQ struct {
 	Key      string `json:"key" yaml:"key"`
 	Redirect string `json:"redirect" yaml:"redirect"` //登录之后的回调地址
 }
+
+//缺了

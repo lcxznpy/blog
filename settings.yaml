@@ -21,23 +21,11 @@ site_info:
     bei_an: qwerqwer
     title: dhxdlqwer
     email: 444346216@qq.com
-    name: dhxdl666
-jwt:
-    secret: xxx
-    expires: 48
-    issuer: xx
+    name: dhxdlqwer
 qq:
-    app_id: "xx"
-    key: xx
+    app_id: xx
+    key: dhxdl
     redirect: http://xx.xx.com/login?flag=qq
-email:
-    host: smtp.qq.com
-    port: 465
-    user: xxx@qq.com
-    password: xxx
-    default_from_email:dhxdl
-    use_sel: xxx
-    user_tls: xxx
 qi_niu:
     access_key: UMM-XX-FdRIF-xx
     secret_key: xx
@@ -45,3 +33,15 @@ qi_niu:
     cdn: xx://xx.xx.com/
     zone: xx
     size: 5
+email:
+    host: smtp.qq.com
+    port: 2345
+    user: qwerqwer@qq.com
+    password: xxx
+    default_from_email: dhxdl
+    use_ssl: false
+    user_tls: true
+jwy:
+    secret: qewr
+    expires: 48
+    issuer: qewr
