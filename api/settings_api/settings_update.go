@@ -5,6 +5,7 @@ import (
 	"blog_server/core"
 	"blog_server/global"
 	"blog_server/models/res"
+	"fmt"
 	"github.com/gin-gonic/gin"
 )
 
@@ -20,7 +21,7 @@ func (SettingApi) SettingApiInfoUpdateView(c *gin.Context) {
 	switch cr.Name {
 	case "site":
 		var info config.SiteInfo
-		err := c.ShouldBindJSON(&info)
+		err = c.ShouldBindJSON(&info)
 		if err != nil {
 			res.FailWithCode(res.ArgumentError, c)
 			return
@@ -28,7 +29,7 @@ func (SettingApi) SettingApiInfoUpdateView(c *gin.Context) {
 		global.Config.SiteInfo = info
 	case "email":
 		var info config.Email
-		err := c.ShouldBindJSON(&info)
+		err = c.ShouldBindJSON(&info)
 		if err != nil {
 			res.FailWithCode(res.ArgumentError, c)
 			return
@@ -37,7 +38,7 @@ func (SettingApi) SettingApiInfoUpdateView(c *gin.Context) {
 
 	case "qq":
 		var info config.QQ
-		err := c.ShouldBindJSON(&info)
+		err = c.ShouldBindJSON(&info)
 		if err != nil {
 			res.FailWithCode(res.ArgumentError, c)
 			return
@@ -45,7 +46,8 @@ func (SettingApi) SettingApiInfoUpdateView(c *gin.Context) {
 		global.Config.QQ = info
 	case "qiniu":
 		var info config.QiNiu
-		err := c.ShouldBindJSON(&info)
+		err = c.ShouldBindJSON(&info)
+		fmt.Println(err, "errrrrrrrrrrrrrrrr")
 		if err != nil {
 			res.FailWithCode(res.ArgumentError, c)
 			return
@@ -53,7 +55,7 @@ func (SettingApi) SettingApiInfoUpdateView(c *gin.Context) {
 		global.Config.QiNiu = info
 	case "jwt":
 		var info config.Jwy
-		err := c.ShouldBindJSON(&info)
+		err = c.ShouldBindJSON(&info)
 		if err != nil {
 			res.FailWithCode(res.ArgumentError, c)
 			return

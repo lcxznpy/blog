@@ -1,7 +1,7 @@
 package config
 
 type Email struct {
-	Host             string `json:"host" yaml:"host"` //邮件服务器后缀
+	Host             string `json:"host" yaml:"host" binding:"required"` //邮件服务器后缀
 	Port             int    `json:"port" yaml:"port"`
 	User             string `json:"user" yaml:"user"` //发件人邮箱
 	Password         string `json:"password" yaml:"password"`

@@ -27,12 +27,13 @@ qq:
     key: dhxdl
     redirect: http://xx.xx.com/login?flag=qq
 qi_niu:
-    access_key: UMM-XX-FdRIF-xx
-    secret_key: xx
-    bucket: dhxdl
-    cdn: xx://xx.xx.com/
-    zone: xx
-    size: 5
+    enable: false
+    access_key: ""
+    secret_key: ""
+    bucket: ""
+    cdn: ""
+    zone: ""
+    size: 0
 email:
     host: smtp.qq.com
     port: 2345
@@ -45,3 +46,6 @@ jwy:
     secret: qewr
     expires: 48
     issuer: qewr
+upload:
+    size: 2
+    path: uploads/file
