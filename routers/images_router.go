@@ -7,4 +7,5 @@ func (r RouterGroup) ImagesRouter() {
 	r.GET("/images", app.ImageListView)
 	r.POST("/images", app.ImageUploadView)
 	r.DELETE("/images", app.ImageRemoveView)
+	r.PUT("/images", app.ImageUpdateView)
 }
