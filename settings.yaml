@@ -27,13 +27,14 @@ qq:
     key: dhxdl
     redirect: http://xx.xx.com/login?flag=qq
 qi_niu:
-    enable: false
-    access_key: ""
-    secret_key: ""
-    bucket: ""
-    cdn: ""
-    zone: ""
-    size: 0
+    enable: true
+    access_key: "KtMX80Fc8jWJi47BS7JoFT8rOgeG1HmwPfOMkNvI"
+    secret_key: "I7ue_wz6dFur1AExPD_oMsm1VGT0LyteE6KSX6ni"
+    bucket: "dhxdl666"
+    cdn: "ru2pmj6pz.hd-bkt.clouddn.com/"
+    zone: "z0"
+    prefix: "gvb"
+    size: 5
 email:
     host: smtp.qq.com
     port: 2345
