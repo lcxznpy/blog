@@ -8,9 +8,18 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+// AdvertUpdateView 更新广告
+// @Tags 广告管理
+// @Summary 更新广告
+// @Description 更新广告
+// @Param data body AdvertRequest true "广告的一些参数"
+// @Failure 400 {object} string "请求错误"
+// @Produce json
+// @Router /api/adverts/:id [put]
+// @Success 200 {object} res.Response{date=string}
 func (AdvertApi) AdvertUpdateView(c *gin.Context) {
 	id := c.Param("id")
-	var cr AdvertModel
+	var cr AdvertRequest
 	err := c.ShouldBindJSON(&cr)
 	if err != nil {
 		res.FailWithError(err, &cr, c)

@@ -8,6 +8,15 @@ import (
 	"strings"
 )
 
+// AdvertListView 广告列表
+// @Tags 广告管理
+// @Summary 广告列表
+// @Description 广告列表
+// @Param data query models.PageInfo true "表示多个参数"
+// @Failure 400 {object} string "请求错误"
+// @Produce json
+// @Router /api/adverts [get]
+// @Success 200 {object} res.Response{data=res.ListResponse[models.AdvertModel]}
 func (AdvertApi) AdvertListView(c *gin.Context) {
 	var cr models.PageInfo
 	err := c.ShouldBindQuery(&cr)

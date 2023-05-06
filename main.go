@@ -2,11 +2,17 @@ package main
 
 import (
 	"blog_server/core"
+	_ "blog_server/docs"
 	"blog_server/flag"
 	"blog_server/global"
 	"blog_server/routers"
 )
 
+// @title gvb_server API文档
+// @version 1.0
+// @description Api文档
+// @host localhost:8080
+// @BasePath /
 func main() {
 	//读取配置文件
 	core.InitConf()

@@ -7,15 +7,24 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-type AdvertModel struct {
+type AdvertRequest struct {
 	Title  string `json:"title" binding:"required" msg:"请输入标题" structs:"title"`         // 显示的标题
 	Href   string `json:"href" binding:"required,url" msg:"跳转链接不合法" structs:"href"`     // 跳转链接
 	Images string `json:"images" binding:"required,url" msg:"图片地址不合法" structs:"images"` // 图片
 	IsShow bool   `json:"is_show" structs:"is_show"`                                    // 是否展示
 }
 
+// AdvertCreateView 添加广告
+// @Tags 广告管理
+// @Summary 创建广告
+// @Description 创建广告
+// @Param data body AdvertRequest true "表示多个参数"
+// @Success 200 {object} res.Response{}
+// @Failure 400 {object} string "请求错误"
+// @Produce json
+// @Router /api/adverts [post]
 func (AdvertApi) AdvertCreateView(c *gin.Context) {
-	var cr AdvertModel
+	var cr AdvertRequest
 	err := c.ShouldBindJSON(&cr)
 	if err != nil {
 		res.FailWithError(err, &cr, c)
