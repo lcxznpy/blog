@@ -14,16 +14,17 @@ type ImageSort struct {
 }
 
 type MenuRequest struct {
-	Title         string      `json:"title" binding:"required" msg:"请输入菜单名称"`
-	Path          string      `json:"path" binding:"required" msg:"请输入菜单路径"`
-	Slogan        string      `json:"slogan"`
-	Abstract      ctype.Array `json:"abstract"`
-	AbstractTime  int         `json:"abstract_time"`                         //图片切换的时间单位秒
-	BannerTime    int         `json:"banner_time"`                           //图片切换的时间单位秒
-	Sort          int         `json:"sort" binding:"required" msg:"请输入菜单序号"` //菜单的序号
-	ImageSortList []ImageSort `json:"image_sort_list"`                       // 图片切换的顺序
+	Title         string      `json:"title" binding:"required" msg:"请输入菜单名称" structs:"title"`
+	Path          string      `json:"path" binding:"required" msg:"请输入菜单路径" structs:"path"`
+	Slogan        string      `json:"slogan" structs:"slogan"`
+	Abstract      ctype.Array `json:"abstract" structs:"abstract"`
+	AbstractTime  int         `json:"abstract_time" structs:"abstract_time"`                //图片切换的时间单位秒
+	BannerTime    int         `json:"banner_time" structs:"banner_time"`                    //图片切换的时间单位秒
+	Sort          int         `json:"sort" binding:"required" msg:"请输入菜单序号" structs:"sort"` //菜单的序号
+	ImageSortList []ImageSort `json:"image_sort_list" structs:"-"`                          // 图片切换的顺序
 }
 
+// MenuCreateView 添加菜单记录
 func (MenuApi) MenuCreateView(c *gin.Context) {
 	var cr MenuRequest
 	err := c.ShouldBindJSON(&cr)

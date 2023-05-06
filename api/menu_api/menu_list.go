@@ -17,7 +17,7 @@ type MenuResponse struct {
 	Banners []Banner `json:"banners"`
 }
 
-// 自定义连接表的图片顺序输出
+// MenuListView 菜单列表   自定义连接表的图片顺序输出
 func (MenuApi) MenuListView(c *gin.Context) {
 	//先查菜单
 	var menuList []models.MenuModel
@@ -30,7 +30,8 @@ func (MenuApi) MenuListView(c *gin.Context) {
 	global.DB.Preload("BannerModel").Order("sort desc").Find(&menuBanners, "menu_id in ?", menuIdList)
 	var menus []MenuResponse //每个菜单连着图片当作一条响应
 	for _, model := range menuList {
-		var banners []Banner //存当前菜单下的图片
+		//var banners []Banner //存当前菜单下的图片
+		var banners = make([]Banner, 0) //解决不传图片造成返回值为nil造成的无限循环问题
 		for _, banner := range menuBanners {
 			if model.ID != banner.MenuID {
 				continue
