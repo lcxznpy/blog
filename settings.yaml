@@ -44,9 +44,11 @@ email:
     use_ssl: false
     user_tls: true
 jwy:
-    secret: qewr
-    expires: 48
-    issuer: qewr
+    secret: qwer
+    expires: 2
+    issuer: "qwer"
 upload:
     size: 2
     path: uploads/file
+
+

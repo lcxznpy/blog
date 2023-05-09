@@ -24,7 +24,7 @@ func IsWebStop(option Option) bool {
 	if option.DB {
 		return true
 	}
-	return true
+	return false
 }
 
 func SwitchOption(option Option) {
@@ -36,5 +36,5 @@ func SwitchOption(option Option) {
 		CreateUser(option.User)
 		return
 	}
-	sys_flag.Usage()
+	//sys_flag.Usage()
 }
