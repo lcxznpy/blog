@@ -11,7 +11,7 @@ func (r RouterGroup) UserRouter() {
 	r.GET("/users", middleware.JwtAuth(), app.UserListView)
 	r.PUT("/user_role", middleware.JwtAdmin(), app.UserUpdateRoleView)
 	r.PUT("/user_pwd", middleware.JwtAuth(), app.UserUpdatePassword)
-	//r.POST("/menus", app.MenuCreateView)
+	r.POST("/logout", middleware.JwtAuth(), app.LogoutView)
 
 	//r.DELETE("/menus", app.MenuRemoveView)
 }
