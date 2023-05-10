@@ -1,13 +1,17 @@
 package routers
 
-import "blog_server/api"
+import (
+	"blog_server/api"
+	"blog_server/middleware"
+)
 
 func (r RouterGroup) UserRouter() {
 	app := api.ApiGroupApp.UserApi
 	r.POST("/email_login", app.EmailLoginView)
-	//r.GET("/menus/:id", app.MenuDetailView)
-	//r.GET("/menu_names", app.MenuNameList)
+	r.GET("/users", middleware.JwtAuth(), app.UserListView)
+	r.PUT("/user_role", middleware.JwtAdmin(), app.UserUpdateRoleView)
+	r.PUT("/user_pwd", middleware.JwtAuth(), app.UserUpdatePassword)
 	//r.POST("/menus", app.MenuCreateView)
-	//r.PUT("/menus/:id", app.MenuUpdateView)
+
 	//r.DELETE("/menus", app.MenuRemoveView)
 }
