@@ -37,12 +37,12 @@ qi_niu:
     size: 5
 email:
     host: smtp.qq.com
-    port: 2345
-    user: qwerqwer@qq.com
-    password: xxx
+    port: 465
+    user: 444346216@qq.com
+    password: fprznfdwyvkicbbe
     default_from_email: dhxdl
-    use_ssl: false
-    user_tls: true
+    use_ssl: true
+    user_tls: false
 jwy:
     secret: qwer
     expires: 2
